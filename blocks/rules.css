@@ -1,0 +1,16 @@
+.rules {
+  padding: 40px;
+}
+
+.rules__list {
+  max-width: 800px;
+  padding: 0;
+  list-style: none;
+}
+
+.rules__item {
+  background-color: #000;
+  border: 2px solid #ffd700;
+  margin-bottom: 10px;
+  padding: 12px 16px;
+}

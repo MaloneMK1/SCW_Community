@@ -1,0 +1,16 @@
+.alumni {
+  padding: 40px;
+}
+
+.alumni__list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.alumni__card {
+  background-color: #1f1f1f;
+  border: 2px solid #ffd700;
+  padding: 20px;
+  width: 220px;
+}

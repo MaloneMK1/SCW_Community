@@ -1,0 +1,50 @@
+.weekly-matches {
+  padding: 40px;
+}
+
+.weekly-matches__list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.weekly-matches__card {
+  flex: 1 1 260px;
+  background-color: #000;
+  border: 2px solid #ffd700;
+  padding: 20px;
+}
+
+.weekly-matches__card_main-event {
+  flex: 2 1 540px;
+
+  min-height: 200px;
+
+  border-width: 4px;
+}
+
+.weekly-matches__label {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.weekly-matches__title {
+  margin: 0 0 15px;
+  font-size: 24px;
+}
+
+.weekly-matches__competitors {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.weekly-matches__teams {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.weekly-matches__stipulation {
+  color: #ffffff;
+}

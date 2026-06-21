@@ -1,0 +1,10 @@
+.events {
+  padding: 40px;
+}
+
+.events__card {
+  max-width: 700px;
+  background-color: #000;
+  border: 2px solid #ffd700;
+  padding: 20px;
+}
