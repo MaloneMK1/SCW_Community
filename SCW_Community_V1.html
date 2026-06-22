@@ -3,309 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>SCW Community Tracker</title>
-
-    <link rel="stylesheet" href="./styles/styles.css" />
+    <meta name="description" content="SCW Community Da Mecca — rankings, champions, events, and match cards." />
+    <title>SCW Community Da Mecca</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kings&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Kings&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/styles.css" />
   </head>
-
   <body>
     <div class="page">
-      <header class="header">
-        <img
-          class="header__logo-image"
-          src="./images/SCW_logo1.svg"
-          alt="SCW Logo"
-        />
-
-        <h1 class="header__title">SCW Community Da Mecca</h1>
-
-        <nav class="header__nav">
-          <a class="header__nav-link" href="#">Home</a>
-          <a class="header__nav-link" href="#">Rankings</a>
-          <a class="header__nav-link" href="#">Roster</a>
-          <a class="header__nav-link" href="#">Events</a>
-          <a class="header__nav-link" href="#">Weekly Matches</a>
-          <a class="header__nav-link" href="#">Rules</a>
+      <header class="header" id="top">
+        <a class="header__brand" href="#top" aria-label="SCW Community home">
+          <img class="header__logo-image" src="./images/SCW_logo1.svg" alt="SCW logo" data-site-logo />
+          <span class="header__title" data-community-name>SCW Community Da Mecca</span>
+        </a>
+        <button class="header__menu-button" type="button" aria-expanded="false" aria-controls="site-navigation">Menu</button>
+        <nav class="header__nav" id="site-navigation" aria-label="Main navigation">
+          <a class="header__nav-link" href="#champions">Champions</a>
+          <a class="header__nav-link" href="#rankings">Rankings</a>
+          <a class="header__nav-link" href="#roster">Roster</a>
+          <a class="header__nav-link" href="#factions">Factions</a>
+          <a class="header__nav-link" href="#events">Events</a>
+          <a class="header__nav-link" href="#weekly-matches">Matches</a>
+          <a class="header__nav-link" href="#rules">Rules</a>
+          <a class="header__nav-link header__nav-link_admin" href="./admin.html">Leader Login</a>
         </nav>
       </header>
 
       <main>
-        <section class="hero">
-          <h2>Welcome to Da Mecca SCW</h2>
-
-          <p>
-            Track rankings, championships, events, and the every competitors in
-            the best community.
-          </p>
-
-          <button>View Champions</button>
-        </section>
-        <section class="champions">
-          <h2>Current Champions</h2>
-
-          <div class="champions__list">
-            <article class="champions__card champions__card_global">
-              <div class="champions__card-content">
-                <h3>SCW Global Champion</h3>
-                <p>Vacant</p>
-              </div>
-            </article>
-
-            <div class="champions__row">
-              <article class="champions__card champions__card_circle">
-                <div class="champions__card-content">
-                  <h3>
-                    Five Star <br />
-                    Champion
-                  </h3>
-                  <p>Vacant</p>
-                </div>
-              </article>
-
-              <article class="champions__card champions__card_circle">
-                <div class="champions__card-content">
-                  <h3>Tag Team Champions</h3>
-                  <p>Vacant</p>
-                </div>
-              </article>
-            </div>
-
-            <div class="champions__row">
-              <article class="champions__card champions__card_circle">
-                <div class="champions__card-content">
-                  <h3>Junkyard Dawg Champion</h3>
-                  <p>Vacant</p>
-                </div>
-              </article>
-
-              <article class="champions__card champions__card_circle">
-                <div class="champions__card-content">
-                  <h3>Rising Sun Champion</h3>
-                  <p>Vacant</p>
-                </div>
-              </article>
-            </div>
-          </div>
+        <section class="hero" aria-labelledby="hero-title">
+          <p class="eyebrow">Welcome to</p>
+          <h1 id="hero-title" data-hero-title>Da Mecca SCW</h1>
+          <p data-hero-description>Track rankings, championships, events, and every competitor in the best community.</p>
+          <a class="button" href="#champions">View Champions</a>
         </section>
 
-        <section class="rankings">
-          <h2>Top Rankings</h2>
-
-          <ol class="rankings__list">
-            <li class="rankings__item">BJizzle AKA Termination</li>
-            <li class="rankings__item">Dillon</li>
-            <li class="rankings__item">Michael King</li>
-            <li class="rankings__item">Geez Profit</li>
-            <li class="rankings__item">Mica</li>
-            <li class="rankings__item">Pechuer</li>
-            <li class="rankings__item">Dwarven</li>
-            <li class="rankings__item">Phase</li>
-            <li class="rankings__item">DukeMane</li>
-            <li class="rankings__item">A Dub</li>
-            <li class="rankings__item">Final Rulez</li>
-            <li class="rankings__item">Jokey</li>
-            <li class="rankings__item">MPJRAR</li>
-            <li class="rankings__item">Redemption</li>
-            <li class="rankings__item">Story</li>
-            <li class="rankings__item">Kelly James</li>
-            <li class="rankings__item">Vegeta</li>
-          </ol>
+        <section class="section champions" id="champions" aria-labelledby="champions-title">
+          <div class="section__heading"><p class="eyebrow">The gold</p><h2 id="champions-title">Current Champions</h2></div>
+          <div class="champions__list" data-champions></div>
         </section>
 
-        <section class="alumni">
-          <h2>SCW Alumni</h2>
-
-          <div class="alumni__list">
-            <article class="alumni__card">
-              <h3>BJizzle</h3>
-              <p>Owner • Former Champion • Community Veteran</p>
-            </article>
-
-            <article class="alumni__card">
-              <h3>RageMonkey</h3>
-              <p>Former Grand Slam Champion • Hall of Fame Competitor</p>
-            </article>
-
-            <article class="alumni__card">
-              <h3>FutureBound</h3>
-              <p>Former Grand Slam Champion • Hall of Fame Competitor</p>
-            </article>
-
-            <article class="alumni__card">
-              <h3>Sir Henry Francis</h3>
-              <p>Former Grand Slam Champion • Hall of Fame Competitor</p>
-            </article>
-
-            <article class="alumni__card">
-              <h3>D Reddy</h3>
-              <p>Chaos in the Flesh • Hall of Fame Competitor</p>
-            </article>
-
-            <article class="alumni__card">
-              <h3>Gosier</h3>
-              <p>Former Grand Slam Champion • Hall of Fame Competitor</p>
-            </article>
-
-            <article class="alumni__card">
-              <h3>Cutter</h3>
-              <p>Former 3x Tag Champion • Hall of Fame Competitor</p>
-            </article>
-
-            <article class="alumni__card">
-              <h3>Gibson</h3>
-              <p>Former Champion • Hall of Fame Competitor</p>
-            </article>
-          </div>
+        <section class="section rankings" id="rankings" aria-labelledby="rankings-title">
+          <div class="section__heading"><p class="eyebrow">Top contenders</p><h2 id="rankings-title">Top Rankings</h2></div>
+          <ol class="rankings__list" data-rankings></ol>
         </section>
 
-        <section class="events">
-          <h2>Upcoming Events</h2>
-
-          <article class="events__card">
-            <h3>SCW Weekly Showdown</h3>
-
-            <p>
-              Rivalries continue as the road to the next championship event
-              begins.
-            </p>
-          </article>
+        <section class="section roster" id="roster" aria-labelledby="roster-title">
+          <div class="section__heading"><p class="eyebrow">The locker room</p><h2 id="roster-title">SCW Roster</h2></div>
+          <div class="roster__list" data-roster></div>
         </section>
 
-        <section class="weekly-matches">
-          <h2>Weekly Match Card</h2>
-
-          <div class="weekly-matches__list">
-            <article class="weekly-matches__card">
-              <p class="weekly-matches__label">Number 1 Contenders Match</p>
-              <h3 class="weekly-matches__title">Triple Threat Match</h3>
-
-              <ul class="weekly-matches__competitors">
-                <li>Competitor One</li>
-                <li>Competitor Two</li>
-                <li>Competitor Three</li>
-              </ul>
-            </article>
-
-            <article class="weekly-matches__card">
-              <p class="weekly-matches__label">Junkyard Dawg Title Match</p>
-              <h3 class="weekly-matches__title">Backstage Street Fight</h3>
-
-              <ul class="weekly-matches__competitors">
-                <li>Competitor One</li>
-                <li>Competitor Two</li>
-              </ul>
-            </article>
-
-            <article class="weekly-matches__card">
-              <p class="weekly-matches__label">Rising Sun Title Match</p>
-              <h3 class="weekly-matches__title">Six-Man Ladder Match</h3>
-
-              <ul class="weekly-matches__competitors">
-                <li>Competitor One</li>
-                <li>Competitor Two</li>
-                <li>Competitor Three</li>
-                <li>Competitor Four</li>
-                <li>Competitor Five</li>
-                <li>Competitor Six</li>
-              </ul>
-            </article>
-
-            <article class="weekly-matches__card">
-              <p class="weekly-matches__label">Tag Team Title Match</p>
-              <h3 class="weekly-matches__title">Normal Tag Match</h3>
-
-              <div class="weekly-matches__teams">
-                <p>Team One</p>
-                <p>vs</p>
-                <p>Team Two</p>
-              </div>
-            </article>
-
-            <article class="weekly-matches__card">
-              <p class="weekly-matches__label">Five Star Title Match</p>
-              <h3 class="weekly-matches__title">Hardcore Match</h3>
-
-              <p class="weekly-matches__stipulation">
-                Match must reach five stars before any pin or submission can be
-                attempted.
-              </p>
-
-              <ul class="weekly-matches__competitors">
-                <li>Competitor One</li>
-                <li>Competitor Two</li>
-              </ul>
-            </article>
-
-            <article
-              class="weekly-matches__card weekly-matches__card_main-event"
-            >
-              <p class="weekly-matches__label">SCW Global Championship Match</p>
-              <h3 class="weekly-matches__title">Normal 1 vs 1 Match</h3>
-
-              <ul class="weekly-matches__competitors">
-                <li>Competitor One</li>
-                <li>Competitor Two</li>
-              </ul>
-            </article>
-          </div>
+        <section class="section factions" id="factions" aria-labelledby="factions-title">
+          <div class="section__heading"><p class="eyebrow">United in the ring</p><h2 id="factions-title">Factions</h2></div>
+          <div class="factions__list" data-factions></div>
         </section>
 
-        <section class="rules">
-          <h2>Community Rules</h2>
+        <section class="section alumni" id="alumni" aria-labelledby="alumni-title">
+          <div class="section__heading"><p class="eyebrow">Legacy</p><h2 id="alumni-title">SCW Alumni</h2></div>
+          <div class="alumni__list" data-alumni></div>
+        </section>
 
-          <ul class="rules__list">
-            <li class="rules__item">
-              <strong>No Spamming:</strong>
-              Refrain from spamming strong strikes, repeated moves, or repeated
-              combos.
-            </li>
+        <section class="section events" id="events" aria-labelledby="events-title">
+          <div class="section__heading"><p class="eyebrow">Don’t miss it</p><h2 id="events-title">Upcoming Events</h2></div>
+          <div class="events__list" data-events></div>
+        </section>
 
-            <li class="rules__item">
-              <strong>Ground Moves:</strong>
-              When your opponent is down, only two ground moves are permitted.
-            </li>
+        <section class="section weekly-matches" id="weekly-matches" aria-labelledby="matches-title">
+          <div class="section__heading"><p class="eyebrow">Fight night</p><h2 id="matches-title">Weekly Match Card</h2></div>
+          <div class="weekly-matches__list" data-matches></div>
+        </section>
 
-            <li class="rules__item">
-              <strong>No Exploits:</strong>
-              Broken moves, tactics, or game exploits may result in
-              disqualification or removal after review.
-            </li>
-
-            <li class="rules__item">
-              <strong>Pins:</strong>
-              Pins are only allowed after Signature or Finisher moves.
-            </li>
-
-            <li class="rules__item">
-              <strong>Submissions:</strong>
-              Slider submissions are the only permitted submission technique.
-            </li>
-
-            <li class="rules__item">
-              <strong>Arguments:</strong>
-              If back-and-forth arguing continues for more than an hour or ten
-              consecutive messages, leadership may book a match to settle it.
-            </li>
-
-            <li class="rules__item">
-              <strong>Banned Moves:</strong>
-              Banned and restricted moves may change throughout the season.
-              Request the current banned moves list in league chat.
-            </li>
-          </ul>
+        <section class="section rules" id="rules" aria-labelledby="rules-title">
+          <div class="section__heading"><p class="eyebrow">Respect the ring</p><h2 id="rules-title">Community Rules</h2></div>
+          <ul class="rules__list" data-rules></ul>
         </section>
       </main>
-
-      <footer class="footer">
-        <p>SCW Community Tracker By MBA © BJZL 2026</p>
-      </footer>
+      <footer class="footer"><p data-footer>SCW Community Tracker by MBA © BJZL 2026</p></footer>
     </div>
+    <script type="module" src="./scripts/site.js"></script>
   </body>
 </html>

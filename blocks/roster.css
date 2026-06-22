@@ -1,0 +1,17 @@
+.roster__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+}
+
+.roster__card {
+  min-height: 130px;
+  padding: 22px;
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+}
+
+.roster__name { margin: 0 0 10px; font-size: 1.25rem; }
+.roster__description { margin: 0; color: var(--muted); }
+.roster__empty { grid-column: 1 / -1; margin: 0; color: var(--muted); }

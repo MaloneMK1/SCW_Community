@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SCW Leader Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Kings&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/admin.css" />
+  </head>
+  <body>
+    <main class="admin-shell">
+      <a class="back-link" href="./SCW_Community_V1.html">← Back to public site</a>
+      <section class="login-panel" data-login-panel>
+        <p class="eyebrow">SCW Community</p><h1>Leader Dashboard</h1>
+        <p>Sign in with your approved leader account to update the community site.</p>
+        <form data-login-form>
+          <label>Email<input name="email" type="email" autocomplete="email" required></label>
+          <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+          <button type="submit">Sign in</button>
+        </form>
+        <p class="message" data-login-message></p>
+      </section>
+
+      <section class="dashboard" hidden data-dashboard>
+        <header class="dashboard__header"><div><p class="eyebrow">Signed in leader</p><h1>Update SCW</h1></div><button class="button-secondary" type="button" data-signout>Sign out</button></header>
+        <p class="message" data-dashboard-message></p>
+        <form class="editor-card" data-settings-form>
+          <h2>Site identity & theme</h2>
+          <div class="form-grid"><label>Community name<input name="community_name" required></label><label>Hero heading<input name="hero_title" required></label></div>
+          <label>Welcome message<textarea name="hero_description" rows="3" required></textarea></label>
+          <div class="form-grid"><label>Accent color<input name="accent" type="color"></label><label>Background color<input name="background" type="color"></label></div>
+          <label>Footer text<input name="footer" required></label><button type="submit">Save site settings</button>
+        </form>
+        <form class="editor-card" data-site-images-form>
+          <h2>Site images</h2><p class="help">Upload a replacement logo or an overall site background. SVG, PNG, JPG, and WebP are accepted.</p>
+          <div class="form-grid"><label>Replace<select name="kind"><option value="logo_url">Site logo</option><option value="background_image_url">Background image</option></select></label><label>Image file<input name="image" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml" required></label></div>
+          <button type="submit">Upload site image</button>
+        </form>
+        <div data-content-editors></div>
+        <section class="editor-card"><h2>Factions</h2><p class="help">Add only a faction name and logo. No leaders or member lists—just the faction.</p>
+          <form class="faction-form" data-faction-form><label>Faction name<input name="name" required></label><label>Logo image<input name="image" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml" required></label><button type="submit">Upload faction</button></form>
+          <div class="faction-admin-list" data-faction-list></div>
+        </section>
+      </section>
+    </main>
+    <script type="module" src="./scripts/admin.js"></script>
+  </body>
+</html>
