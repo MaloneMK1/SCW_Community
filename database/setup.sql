@@ -30,6 +30,11 @@ create table if not exists public.factions (
 alter table public.profiles enable row level security;
 alter table public.site_content enable row level security;
 alter table public.factions enable row level security;
+drop policy if exists "profiles read own" on public.profiles;
+drop policy if exists "public reads site content" on public.site_content;
+drop policy if exists "leaders update site content" on public.site_content;
+drop policy if exists "public reads factions" on public.factions;
+drop policy if exists "leaders manage factions" on public.factions;
 create policy "profiles read own" on public.profiles for select using (auth.uid() = id);
 create policy "public reads site content" on public.site_content for select using (true);
 create policy "leaders update site content" on public.site_content for all using (public.is_leader()) with check (public.is_leader());
@@ -37,5 +42,7 @@ create policy "public reads factions" on public.factions for select using (true)
 create policy "leaders manage factions" on public.factions for all using (public.is_leader()) with check (public.is_leader());
 
 insert into storage.buckets (id, name, public) values ('scw-images', 'scw-images', true) on conflict (id) do nothing;
+drop policy if exists "public reads SCW images" on storage.objects;
+drop policy if exists "leaders manage SCW images" on storage.objects;
 create policy "public reads SCW images" on storage.objects for select using (bucket_id = 'scw-images');
 create policy "leaders manage SCW images" on storage.objects for all using (bucket_id = 'scw-images' and public.is_leader()) with check (bucket_id = 'scw-images' and public.is_leader());
