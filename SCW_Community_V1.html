@@ -19,25 +19,28 @@
   <body>
     <div class="page">
       <header class="header" id="top">
-        <a class="header__brand" href="#top" aria-label="SCW Community home">
-          <img
-            class="header__logo-image"
-            src="./images/SCWLogoClean.svg"
-            alt="SCW logo"
-            data-site-logo
-          />
-          <span class="header__title" data-community-name
-            >Da Mecca SCW Community</span
+        <div class="header__brand">
+          <button
+            class="header__logo-button"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-navigation"
+            aria-label="Open site navigation"
           >
-        </a>
-        <button
-          class="header__menu-button"
-          type="button"
-          aria-expanded="false"
-          aria-controls="site-navigation"
-        >
-          Menu
-        </button>
+            <img
+              class="header__logo-image"
+              src="./images/SCWLogoClean.svg"
+              alt=""
+              data-site-logo
+            />
+            <span class="header__logo-menu-label">Menu</span>
+          </button>
+          <a class="header__home-link" href="#top" aria-label="SCW Community home">
+            <span class="header__title" data-community-name
+              >Da Mecca SCW Community</span
+            >
+          </a>
+        </div>
         <nav
           class="header__nav"
           id="site-navigation"
@@ -168,6 +171,7 @@
         />
       </footer>
     </div>
+    <script src="./scripts/menu.js"></script>
     <script type="module" src="./scripts/site.js"></script>
   </body>
 </html>

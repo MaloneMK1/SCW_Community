@@ -34,8 +34,8 @@
           <label>Footer text<input name="footer" required></label><button type="submit">Save site settings</button>
         </form>
         <form class="editor-card" data-site-images-form>
-          <h2>Site images</h2><p class="help">Upload a replacement logo or an overall site background. SVG, PNG, JPG, and WebP are accepted.</p>
-          <div class="form-grid"><label>Replace<select name="kind"><option value="logo_url">Site logo</option><option value="background_image_url">Background image</option></select></label><label>Image file<input name="image" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml" required></label></div>
+          <h2>Site images</h2><p class="help">Upload a replacement logo, page background, or header banner. Wide banner images work best. The image may be cropped to keep the header readable.</p>
+          <div class="form-grid"><label>Replace<select name="kind"><option value="logo_url">Site logo</option><option value="background_image_url">Page background image</option><option value="header_background_url">Header/banner background image</option></select></label><label>Image file<input name="image" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml" required></label></div>
           <button type="submit">Upload site image</button>
         </form>
         <div data-content-editors></div>

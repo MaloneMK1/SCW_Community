@@ -1,4 +1,3 @@
-import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { SUPABASE_URL, SUPABASE_ANON_KEY } from "./supabase-config.js";
 
 const fallback = {
@@ -20,6 +19,7 @@ function render(data, factions = []) {
   document.documentElement.style.setProperty("--accent", settings.accent || fallback.site_settings.accent);
   document.documentElement.style.setProperty("--background", settings.background || fallback.site_settings.background);
   if (settings.background_image_url) document.documentElement.style.setProperty("--site-background-image", `url("${settings.background_image_url}")`);
+  if (settings.header_background_url) document.documentElement.style.setProperty("--header-background-image", `url("${settings.header_background_url}")`);
   if (settings.logo_url) node("[data-site-logo]").src = settings.logo_url;
   document.title = settings.community_name || fallback.site_settings.community_name;
   node("[data-community-name]").textContent = settings.community_name || fallback.site_settings.community_name;
@@ -38,13 +38,18 @@ function render(data, factions = []) {
 
 async function load() {
   if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return render(fallback);
-  const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-  const [{ data: contentRows, error: contentError }, { data: factions, error: factionsError }] = await Promise.all([supabase.from("site_content").select("content_key, content_value"), supabase.from("factions").select("name, image_url, sort_order").order("sort_order")]);
-  if (contentError || factionsError) { console.warn("Could not load SCW content", contentError || factionsError); return render(fallback); }
-  const content = { ...fallback };
-  contentRows.forEach(row => { content[row.content_key] = row.content_value; });
-  render(content, factions || []);
+  try {
+    const { createClient } = await import("https://esm.sh/@supabase/supabase-js@2");
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const [{ data: contentRows, error: contentError }, { data: factions, error: factionsError }] = await Promise.all([supabase.from("site_content").select("content_key, content_value"), supabase.from("factions").select("name, image_url, sort_order").order("sort_order")]);
+    if (contentError || factionsError) { console.warn("Could not load SCW content", contentError || factionsError); return render(fallback); }
+    const content = { ...fallback };
+    contentRows.forEach(row => { content[row.content_key] = row.content_value; });
+    render(content, factions || []);
+  } catch (error) {
+    console.warn("Could not connect to Supabase. Showing starter content.", error);
+    render(fallback);
+  }
 }
 
-node(".header__menu-button").addEventListener("click", event => { const nav = node(".header__nav"); const isOpen = nav.classList.toggle("is-open"); event.currentTarget.setAttribute("aria-expanded", String(isOpen)); });
 load();

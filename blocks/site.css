@@ -16,15 +16,12 @@ body { background: var(--background); }
 .champions__card { background: var(--surface); }
 .events__list { display: grid; gap: 16px; }
 .events__card { max-width: none; }
-.header__menu-button { display: none; }
 @media (max-width: 800px) {
-  .header { flex-wrap: wrap; padding: 16px; }
-  .header__brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-  .header__logo-image { width: 58px; }
-  .header__title { font-size: 1.7rem; }
-  .header__menu-button { display: block; padding: 9px 12px; border: 1px solid var(--accent); border-radius: 5px; background: transparent; color: var(--accent); font-weight: 800; }
-  .header__nav { display: none; width: 100%; flex-direction: column; padding-top: 14px; }
-  .header__nav.is-open { display: flex; }
+  .header { padding: 16px; }
+  .header__brand { gap: 12px; }
+  .header__logo-image { width: 84px; }
+  .header__title { font-size: clamp(1.9rem, 8vw, 3rem); }
+  .header__nav { top: calc(100% - 10px); grid-template-columns: 1fr; }
   .champions__row { flex-direction: column; gap: 20px; }
   .champions__card_global { width: min(100%, 500px); }
   .section { padding: 52px 20px; }
